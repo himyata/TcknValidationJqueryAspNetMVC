@@ -1,0 +1,57 @@
+﻿@model TcknValidationJQueryAspNetMVC.Models.Person
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TC Kimlik No Doğrulama</title>
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/customValidation.js"></script>
+</head>
+<body>
+    <div> 
+        <h1>TC Kimlik No Doğrulama</h1>
+        <h2>Asp.Net MVC, Custom Attributes, jQuery Validation</h2>
+    </div>
+    <br />
+
+@using (Html.BeginForm())
+{
+    <div>
+        <table>
+            <tr>
+                <td>Tc Kimlik No</td>
+                <td>
+                    @Html.TextBoxFor(m => m.TCKN)
+                    @Html.ValidationMessageFor(m => m.TCKN)
+                </td>
+            </tr>
+            <tr>
+                <td>Ad</td>
+                <td>
+                    @Html.TextBoxFor(m => m.Ad)
+                    @Html.ValidationMessageFor(m => m.Ad)
+                </td>
+            </tr>
+            <tr>
+                <td>Soyad</td>
+                <td>
+                    @Html.TextBoxFor(m => m.Soyad)
+                    @Html.ValidationMessageFor(m => m.Soyad)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input id="btnSave" type="submit" value="Kaydet" /></td>
+            </tr>
+        </table>
+    </div>
+}
+</body>
+</html>
